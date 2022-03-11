@@ -5,7 +5,7 @@ class Pokemon {
     this._name  = name
     this._id    = id
     this._type  = type
-    this._color = selectColor(type)
+    this._color = selectColor(this._type)
     this._moves = moves 
   }
 

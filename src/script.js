@@ -19,10 +19,12 @@ function rodaPokemons(id) {
     // console.log(dados)
 
     let pokemon = new Pokemon(dados.name, id, dados.types[0].type.name, [dados.moves[0].move.name, dados.moves[1].move.name, dados.moves[2].move.name ,dados.moves[3].move.name] )
-    
-    pokemonsDb.push(pokemon)
 
+    pokemonsDb.push(pokemon)
+    // console.log(pokemonsDb)
     Board.createPokeLi(pokemon)
+
+    // Board.createPokeLi(pokemon)
  
     /*let pokemonLi = document.createElement("div")
 
@@ -133,10 +135,19 @@ function selectColor(type) {
   }
 }
 
-for(let i = 1; i < 201; i++){
+for(let i = 1; i <= 202; i++){
+  
   rodaPokemons(i)
+
 }
 
-// rodaPokemons(25)
+
+
+document.getElementById("consoleDb").addEventListener( "click", () => {
+  // Board.createPokeLi()
+  console.log(pokemonsDb.length)
+})
+
+
 
 export {selectColor, idToImage}

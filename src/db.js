@@ -1,3 +1,3 @@
-let pokemonsDb = [0, ]
+let pokemonsDb = [ ]
 
 export {pokemonsDb}
