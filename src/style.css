@@ -4,6 +4,7 @@
   margin: 0px;
   padding: 0px;
   box-sizing: border-box;
+  font-family: "Poppins";
 }
 
 body {
@@ -38,48 +39,103 @@ main {
   border-radius: 7px; */
 }
 
-#mainCard {
+#mainCardContainer {
   width: 100%;
   height: 100%;
   border-radius: 7px;
   background-color: white;
   display: flex;
-  justify-content: space-between;
+  justify-content: space-around;
+  align-items: center;
   padding: 2rem;
 }
 
-#data {
-  /* display: flex;
-  flex-direction: column; */
-}
-
-#mainCard--nameAndType {
+.card {
+  border: 1px solid black;
+  border-radius: 5%;
+  width: 30%;
+  height: 90%;
+  background-color: #eeeeee;
+  padding: 15px;
   display: flex;
+  justify-content: center;
   flex-direction: column;
 }
 
-#mainCard img {
-  max-height: 350px;
+.main {
+  height: 100%;
+  width: 30%;
+  padding-bottom: 29px;
+}
+
+.main img {
+  height: 390px !important;
+}
+
+.card img {
+  height: 360px;
+  margin-top: 19px;
+}
+
+.dataContent {
+  background-color: white;
+  border-radius: 11px;
+  height: 100%;
+  margin: 15px 8px 15px 8px;
+  padding: 11px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+}
+
+.dataContent h4 {
+  color: #ccc;
+}
+
+.dataContent h2 {
+  color: #000;
+  text-transform: capitalize;
+}
+
+.dataContent ul {
+  display: flex;
 }
 
 aside {
   float: right;
   height: 100%;
-  width: 35%;
+  width: 45%;
   display: flex;
   flex-direction: column;
   overflow-y: scroll;
 }
 
+aside::-webkit-scrollbar {
+  width: 12px;  
+}
+
+aside::-webkit-scrollbar-track {
+  background-color: transparent;
+
+}
+
+aside::-webkit-scrollbar-thumb {
+  background-color: #888;
+  height: 90px;
+  border: 6px solid transparent;
+  border-radius: 9px;
+}
+
 .pokeContainer {
   width: 100%;
-  /* border: 1px solid black; */
   margin: 2px 0px;
   border-radius: 7px;
   font-family: "Poppins";
   display: flex;
   flex-direction: row;
-  font-size: 1.5rem; 
+  font-size: 2.7rem;
+  text-transform: uppercase;
+  font-weight: 500;
 }
 
 .pokeContainer:hover {
@@ -88,17 +144,111 @@ aside {
 }
 
 .pokeContainer:hover img {
-  width: 85px;
+  width: 95px;
   transition: 0.3s;
 }
 
 .pokeContainer img {
-  width: 70px;  
+  width: 125px;  
   float: right;
   margin: 5px 11px 5px 11px;
+  /* border: 1px solid black;
+  border-radius: 50%; */
 }
 
 .dados {
   display: flex;
   flex-direction: column;
+}
+
+
+
+
+/*                            POKE TYPES                   */
+
+.invisible {
+  opacity: 0%;
+}
+
+.pokeType {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 125px;
+  margin-right: 8px;
+  padding: 5px 6px;
+  font-size: 22px;
+  color: black !important;
+}
+
+.grass {
+  background-color: #78C850;
+}
+
+.fire {
+  background-color: #F08030;
+}
+
+.water {
+  background-color: #6890F0;
+}
+
+.bug {
+  background-color: #A8B820;
+}
+
+.normal {
+  background-color: #A8A878;
+}
+
+.flying {
+  background: linear-gradient(180deg, #3dc7ef 50%, #bdb9b8 50%);
+  background-color: #3dc7ef;
+  color: #212121 !important;
+}
+
+.poison {
+  background-color: #A040A0;
+}
+
+.electric {
+  background-color: #F8D030;
+}
+
+.ground {
+  background: linear-gradient(180deg, #f7de3f 50%, #ab9842 50%);
+  background-color: #f7de3f;
+}
+
+.fairy {
+  background-color: #fdb9e9;
+}
+
+.fighting {
+  background-color: #d56723;
+}
+
+.psychic {
+  background-color: #f366b9;
+}
+
+.rock {
+  background-color: #B8A038;
+}
+
+.ghost {
+  background-color: #705898;
+}
+
+.ice {
+  background-color: #98D8D8;
+}
+
+.dragon {
+  background: linear-gradient(180deg, #53a4cf 50%, #f16e57 50%);
+  background-color: #53a4cf;
+}
+
+.dark {
+  background-color: #705B4A;
 }
