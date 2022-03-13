@@ -2,7 +2,7 @@ import {pokemonsDb} from "./db.js"
 import {Pokemon} from "./pokemons.js"
 import {Board} from "./board.js"
 
-async function rodaPokemons(id) {
+function rodaPokemons(id) {
 
   fetch(`https://pokeapi.co/api/v2/pokemon/${id}`)
   .then( (response) => {
@@ -14,14 +14,12 @@ async function rodaPokemons(id) {
     let pokemon = new Pokemon(dados.name, id, dados.types, dados.moves)
 
     pokemonsDb.push(pokemon)
-
     Board.createPokeLi(pokemon)
-
   })
 
 }
 
-for(let i = 1; i <= 201; i++){
+for(let i = 1; i <= 50; i++){
 
   rodaPokemons(i)
 
