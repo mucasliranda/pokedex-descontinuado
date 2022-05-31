@@ -3,8 +3,39 @@ import {Pokemon} from "./pokemons.js"
 
 
 class Board {
+
+  static async fillDb(i){
+
+    for(let id = 1; id <= i; id++){
+      fetch(`https://pokeapi.co/api/v2/pokemon/${id}`)
+      .then( (response) => {
+        return response.json()
+      })
+      .then( (response) => {
+        let dados = response
+
+        let pokemon = new Pokemon(dados.name, id, dados.types, dados.moves)
+
+        pokemonsDb.push(pokemon)
+        // Board.createPokeLi(pokemon)
+      })
+    }
+
+    return pokemonsDb
+
+  }
+
+  // static async listarClientes(){
+
+  //   const response = await Board.fillDb
+  //   const data     = await response.json()
+
+  //   return data
+
+  // }
+
   
-  static createPokeLi(pokemon) {
+  static createPokeLi(pokemon){
     const aside     = document.querySelector("aside")
     const pokeList  = document.getElementById("pokeList")
 
@@ -33,7 +64,7 @@ class Board {
     aside.appendChild(pokeList)
   }
 
-  static getClick(event) {
+  static getClick(event){
 
     let target = event.target
   
@@ -53,7 +84,7 @@ class Board {
 
   }
 
-  static returnRightPokemon(id) {
+  static returnRightPokemon(id){
 
     for(let i = 0; i < pokemonsDb.length; i++){
 
@@ -66,7 +97,7 @@ class Board {
 
   }
 
-  static createPokeCards(pokeLeft, pokeMain, pokeRight) {
+  static createPokeCards(pokeLeft, pokeMain, pokeRight){
 
     let mainCardContainer       = document.getElementById("mainCardContainer")
 
